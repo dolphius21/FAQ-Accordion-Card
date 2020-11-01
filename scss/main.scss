@@ -29,6 +29,7 @@ body {
   margin: auto;
 
   @include media-lg {
+    position: relative;
     padding: 2rem 5rem;
   }
 }
@@ -124,6 +125,16 @@ p {
 
       .question {
         color: $text-secondary;
+        cursor: pointer;
+        transition: all 0.5s ease-out;
+      }
+
+      .question:hover {
+        color: $primary-color;
+      }
+
+      .q-active {
+        color: $text-primary;
       }
 
       .answer {
@@ -131,13 +142,27 @@ p {
         font-size: 0.9rem;
         margin-top: 1rem;
         display: none;
+        animation: down2 0.5s ease-out;
+      }
+
+      .a-active {
+        display: block;
+      }
+
+      .arrow {
+        transform: rotateX(180deg);
+      }
+
+      .down {
+        transform: rotateX(0deg);
       }
     }
   }
 }
 
 .box-container {
-  position: relative;
+  position: absolute;
+  top: 50%;
 
   .floating-box {
     animation: down 1s 0.5s ease-out both;
@@ -145,7 +170,7 @@ p {
     @include media-lg {
       display: block;
       position: absolute;
-      bottom: 170px;
+      top: -40px;
       left: -93px;
     }
   }
@@ -167,6 +192,17 @@ p {
 @keyframes down {
   0% {
     transform: translateY(-50px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@keyframes down2 {
+  0% {
+    transform: translateY(-10px);
     opacity: 0;
   }
   100% {
