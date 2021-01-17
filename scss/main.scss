@@ -133,10 +133,6 @@ p {
         color: $primary-color;
       }
 
-      .q-active {
-        color: $text-primary;
-      }
-
       .answer {
         line-height: 1.5;
         font-size: 0.9rem;
@@ -145,15 +141,21 @@ p {
         animation: down2 0.5s ease-out;
       }
 
-      .a-active {
+      .arrow {
+        transform: rotateX(180deg);
+      }
+    }
+
+    .active {
+      .question {
+        color: $text-primary;
+      }
+      
+      .answer {
         display: block;
       }
 
       .arrow {
-        transform: rotateX(180deg);
-      }
-
-      .down {
         transform: rotateX(0deg);
       }
     }

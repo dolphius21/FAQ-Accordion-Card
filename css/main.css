@@ -171,10 +171,6 @@ p {
   color: #f47c57;
 }
 
-.faq-container .faq-list .faq-item .q-active {
-  color: #1d1e35;
-}
-
 .faq-container .faq-list .faq-item .answer {
   line-height: 1.5;
   font-size: 0.9rem;
@@ -184,16 +180,20 @@ p {
           animation: down2 0.5s ease-out;
 }
 
-.faq-container .faq-list .faq-item .a-active {
-  display: block;
-}
-
 .faq-container .faq-list .faq-item .arrow {
   -webkit-transform: rotateX(180deg);
           transform: rotateX(180deg);
 }
 
-.faq-container .faq-list .faq-item .down {
+.faq-container .faq-list .active .question {
+  color: #1d1e35;
+}
+
+.faq-container .faq-list .active .answer {
+  display: block;
+}
+
+.faq-container .faq-list .active .arrow {
   -webkit-transform: rotateX(0deg);
           transform: rotateX(0deg);
 }
